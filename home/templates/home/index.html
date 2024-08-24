@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h3>Home Page</h3>
+{% endblock %}
+
+{% block content %}
+
+<a href="/?id=8">Australia</a>|
+<a href="/?id=15">Brazil</a>
+<div>
+    <form method="POST">
+        {% csrf_token %} 
+       <input type="text" name="country" placeholder="請輸入國家名稱" />
+       <button type="submit">送出</button> 
+    </form>
+    
+</div>
+
+
+<p>根據國家代號 {{ id }} 讀出相關資料</p>
+<p>國家名稱：{{ country }}</p>
+{% endblock %}
